@@ -13,7 +13,7 @@ public class Prob01 {
 	// Funcao recursiva para colocar numero na posicao 'pos'
 	static int go(int pos) {
 		int i;
-		////////////////////////////////////
+		
 		
 		// Chegamos ao fim da permutacao, vamos imprimi-la
 		if (pos == n+1) {
