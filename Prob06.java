@@ -3,6 +3,9 @@ import java.util.*;
 
 
 class Prob06{
+	/**
+	* Pesquisa binária interativa
+	*/
 	static int binarysearch(int [] sum, int low, int high, int key){
 		int middle = 0;
 		while(low < high){
@@ -30,17 +33,18 @@ class Prob06{
 	}
 	public static void main(String []args){
 		Scanner in = new Scanner(System.in);
-		int n = in.nextInt(); //tamanho
+		int n = in.nextInt(); //o tamanho do conjunto de números
 		int [] seq = new int[n];
 		int fact =  0;
 		
 		
-		
+		//leitura do conjuntos
 		for(int i = 0; i < n; i++){
 			seq[i] = in.nextInt();
 			fact+=i;
 		}
 		
+		// faz as sucessivas somas
 		int [] sum2 = new int[fact];
 		int x = 0;
 		
@@ -55,9 +59,10 @@ class Prob06{
 		int p = in.nextInt(); // no. de perguntas
 		int k;
 		
+		// pesquisa a soma mais proxima.
 		for(int i = 0; i < p; i++){
-			x = in.nextInt();
-			k = binarysearch(sum2, 0, fact-1, x);
+			x = in.nextInt(); //leitura das perguntas
+			k = binarysearch(sum2, 0, fact-1, x); //pesquisa propriamente dita.
 			if(k!= -1)
 				System.out.println(sum2[k]);
 			else 
